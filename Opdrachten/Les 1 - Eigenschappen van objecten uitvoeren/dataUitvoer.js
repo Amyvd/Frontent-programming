@@ -1,6 +1,19 @@
 const uitvoer = document.getElementById('uitvoer')
 let dataObject;
 
+const geefDagWeek = (num) => {
+    switch (num) {
+        case 0: return 'zondag'; break;
+        case 1: return 'maandag'; break;
+        case 2: return 'dinsdag'; break;
+        case 3: return 'woensdag'; break;
+        case 4: return 'donderdag'; break;
+        case 5: return 'vrijdag'; break;
+        case 6: return 'zaterdag'; break;
+        default: return num;
+    }
+}
+
 const maakDatum = (num) => {
     // zet de string van de JS datum om in een betere vorm 
     let datum = new Date(num);
@@ -12,7 +25,7 @@ const maakDatum = (num) => {
     let uren = datum.getHours();
     let minuten = datum.getMinutes();
 
-    return `${dagWeek} <br>
+    return `${geefDagWeek(dagWeek)} <br>
     ${dagMaand} ${maand} ${jaar} ${uren}:${minuten} `;
 }
 
