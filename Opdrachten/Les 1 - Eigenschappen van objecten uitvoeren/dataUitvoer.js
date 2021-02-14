@@ -3,9 +3,14 @@ let dataObject;
 
 
 const uitvoeren = () => {
-    // deze functie voert de data uit in d e div met de ID uitvoer
-    uitvoer.innerHTML = `<div>${dataObject[0].tijd}</div>`;
-    uitvoer.innerHTML = `<div>${dataObject[1].tempBuiten}</div>`;
+    let html = "";
+    dataObject.forEach( obj=> {
+        html += `<div class="rij">`;
+        html += `<div>${obj.tijd}</div>`;
+        html += `<div>${obj.tempBuiten}</div>`;
+        html += `</div>`;
+    })
+    uitvoer.innerHTML = html;
 }
 
 const starten = () => {
@@ -14,5 +19,6 @@ const starten = () => {
     // data uitvoeren
     uitvoeren();
 }
+
 
 document.addEventListener('DOMContentLoaded', starten)
