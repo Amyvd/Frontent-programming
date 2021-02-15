@@ -63,12 +63,12 @@ const uitvoeren = () => {
         if(obj.tempGewenst > obj.tempBinnen){
             html += `<div> <img class="icon" src="icons/vlam.svg" alt="CV ketel aan"> </div>`;
         }else{
-            html += `<div> <img class="icon" src="icons/vlamUit.svg" alt="CV ketel uit"> </div>`;
+            html += `<div> <img class="icon" src="icons/vlamUIt.svg" alt="CV ketel uit"> </div>`;
         }
         if(obj.lichtKamer){
             html += `<div> <img class="icon" src="icons/lampAan.svg" alt="lampen aan"> </div>`;
         }else{
-            html += `<div> <img class="icon" src="icons/lampUit.svg" alt="lampen uit"> </div>`;
+            html += `<div> <img class="icon" src="icons/lampUIt.svg" alt="lampen uit"> </div>`;
         }
         html += `</div>`;
     })

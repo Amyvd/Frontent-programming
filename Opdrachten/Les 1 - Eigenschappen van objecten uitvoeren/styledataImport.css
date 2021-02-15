@@ -1,4 +1,29 @@
 .icon{
     height: 1.2em;
-    
+    margin-left: 2em;
+}
+.rij{
+    display: flex;
+}
+.rij:nth-child(odd) {
+    background-color: aliceblue;
+}
+.rij>div{
+    padding: .5em 1em;
+    display: flex;
+    align-items:center;
+}
+#uitvoerKop{
+    display: flex;
+    font-weight: 800;
+}
+#uitvoerKop>div{
+    padding: .5em .6em;
+}
+#uitvoerKop .tijd{
+    padding-right: 2em;
+}
+
+#uitvoerKnop .gw{
+    padding: .5em .4em;
 }
