@@ -60,14 +60,24 @@ const uitvoeren = () => {
         html += `<div>${obj.tempBuiten} &deg;C</div>`;
         html += `<div>${obj.tempBinnen} &deg;C</div>`;
         html += `<div>${obj.tempGewenst} &deg;C</div>`;
+        if(obj.tempGewenst > obj.tempBinnen){
+            html += `<div> <img class="icon" src="icons/vlam.svg" alt="CV ketel aan"> </div>`;
+        }else{
+            html += `<div> <img class="icon" src="icons/vlamUit.svg" alt="CV ketel uit"> </div>`;
+        }
+        if(obj.lichtKamer){
+            html += `<div> <img class="icon" src="icons/lampAan.svg" alt="lampen aan"> </div>`;
+        }else{
+            html += `<div> <img class="icon" src="icons/lampUit.svg" alt="lampen uit"> </div>`;
+        }
         html += `</div>`;
     })
     uitvoer.innerHTML = html;
 }
 
 const starten = () => {
-    // de data array in onzez dataObject stoppen
-    dataObject = EnergieData;
+    // de data array in onze dataObject stoppen
+    dataObject = energieData;
     // data uitvoeren
     uitvoeren();
 }
