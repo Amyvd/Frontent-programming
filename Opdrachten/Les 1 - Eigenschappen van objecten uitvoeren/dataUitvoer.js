@@ -49,14 +49,14 @@ const maakDatum = (num) => {
     }
     
     return `${geefDagWeek(dagWeek)} <br>
-    ${dagMaand} ${maandNaam(maand)} ${jaar} ${uren}:${minuten} `;
+    ${dagMaand} ${maandnaam(maand)} ${jaar} ${uren}:${minuten} `;
 }
 
 const uitvoeren = () => {
     let html = "";
     dataObject.forEach( obj => {
         html += `<div class="rij">`;
-        html += `<div>${obj.tijd}</div>`;
+        html += `<div class="langemaand">${maakDatum(obj.tijd)}</div>`;
         html += `<div>${obj.tempBuiten} &deg;C</div>`;
         html += `<div>${obj.tempBinnen} &deg;C</div>`;
         html += `<div>${obj.tempGewenst} &deg;C</div>`;
@@ -66,6 +66,11 @@ const uitvoeren = () => {
             html += `<div> <img class="icon" src="icons/vlamUIt.svg" alt="CV ketel uit"> </div>`;
         }
         if(obj.lichtKamer){
+            html += `<div> <img class="icon" src="icons/lampAan.svg" alt="lampen aan"> </div>`;
+        }else{
+            html += `<div> <img class="icon" src="icons/lampUIt.svg" alt="lampen uit"> </div>`;
+        }
+        if(obj.lichtBuiten){
             html += `<div> <img class="icon" src="icons/lampAan.svg" alt="lampen aan"> </div>`;
         }else{
             html += `<div> <img class="icon" src="icons/lampUIt.svg" alt="lampen uit"> </div>`;
